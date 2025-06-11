@@ -1,0 +1,9 @@
+gradio
+langchain-nvidia-ai-endpoints
+langchain-community
+langchain-text-splitters
+langchain-core
+opensearch-py
+boto3
+sentence-transformers
+pypdf

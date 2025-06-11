@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: meta-llama-3-2-1b-instruct
+  labels:
+    app.kubernetes.io/name: meta-llama-3-2-1b-instruct
+    release: kube-prometheus-stack # this is important for ServiceMonitor to be found
+  namespace: monitoring
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: meta-llama-3-2-1b-instruct
+  endpoints:
+  - port: service-port
+    path: /v1/metrics
+  namespaceSelector:
+    matchNames:
+    - nim-service

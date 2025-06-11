@@ -1,0 +1,13 @@
+prometheus:
+  url: http://kube-prometheus-stack-prometheus.monitoring
+  port: 9090
+rules:
+  default: false
+  custom:
+  - seriesQuery: '{__name__=~"^request_success_total$"}'
+    resources:
+      template: <<.Resource>>
+    name:
+      matches: "request_success_total"
+      as: ""
+    metricsQuery: sum(<<.Series>>{<<.LabelMatchers>>}) by (<<.GroupBy>>)

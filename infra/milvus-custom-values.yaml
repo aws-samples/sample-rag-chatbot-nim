@@ -1,0 +1,21 @@
+cluster:
+  enabled: false
+etcd:
+  replicaCount: 1
+minio:
+  mode: standalone
+pulsarv3:
+  enabled: false
+standalone:
+  resources:
+    requests:
+      nvidia.com/gpu: "1"
+    limits:
+      nvidia.com/gpu: "1"
+  nodeSelector:
+    NodeGroupType: gpu-node-pool
+    type: karpenter
+  tolerations:
+  - effect: NoSchedule
+    key: nvidia.com/gpu
+    operator: Exists
