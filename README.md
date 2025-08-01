@@ -1,6 +1,6 @@
 ## RAG Chatbot on Amazon EKS with NVIDIA NIMs
 
-This is a companion repository to the AWS blog post titled _Building a RAG Chatbot on Amazon EKS with NVIDIA NIMs_.
+This is a companion repository to the AWS blog post titled _Building a RAG chat-based assistant on Amazon EKS with NVIDIA NIMs_.
 
 ## Security
 
